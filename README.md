@@ -19,11 +19,17 @@ $ ./astra_gocql_connect
 ## Prerequisites
 1. To compile and run the code, download and install the Go language from https://golang.org/.
 
-2. An [**Astra** database](https://astra.datastax.com). Launching an Apache Cassandra™ database only takes a few clicks.
+2. Install the gocql driver:
+
+   ```
+   $ go get github.com/gocql/gocql
+   ```
+
+3. An [**Astra** database](https://astra.datastax.com). Launching an Apache Cassandra™ database only takes a few clicks.
 
    It's free to try with no credit card required. Visit https://www.datastax.com/products/datastax-astra-beta for details.
    
-3. [Download the secure connect bundle](https://docs.datastax.com/en/astra/aws/doc/dscloud/astra/dscloudObtainingCredentials.html) for your Astra database.
+4. [Download the secure connect bundle](https://docs.datastax.com/en/astra/aws/doc/dscloud/astra/dscloudObtainingCredentials.html) for your Astra database.
 
    Unzip your copy of `secure-connect-your_astra_db.zip` which will contain the following files:
    ```
@@ -47,7 +53,7 @@ $ ./astra_gocql_connect
    ssl = true
    ```
    
-4. To run the sample code as-is, create the table `cities_by_rank`. Note that you can use your own keyspace so modify the code accordingly.
+5. To run the sample code as-is, create the table `cities_by_rank`. Note that you can use your own keyspace so modify the code accordingly.
    ```
    CREATE KEYSPACE community WITH replication = {'class': 'NetworkTopologyStrategy', 'caas-dc': '1'};
    ```
